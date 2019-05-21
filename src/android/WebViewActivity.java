@@ -57,6 +57,9 @@ public class WebViewActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle bundle) {
     super.onCreate(bundle);
+    
+    getSupportActionBar().hide();
+
     //getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
     final LinearLayout container = new LinearLayout(this);
     container.setOrientation(LinearLayout.VERTICAL);
