@@ -73,8 +73,8 @@
   ORESnackBar *bar = [ORESnackBar create];
   bar.textColor = self.errorTextColor;
   bar.backgroundColor = self.errorBackgroundColor;
-  bar.message = @"通信中に問題が発生しました";
-  bar.actionLabel = @"再接続";
+  bar.message = @"网络无法到达";
+  bar.actionLabel = @"重试";
   bar.action = ^(id sender) {
     [self.webView reload];
   };
