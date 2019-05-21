@@ -19,8 +19,9 @@
   if (!self.orientation) {
     self.orientation = UIInterfaceOrientationMaskAll;
   }
-  UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(_handleClose:)];
-  self.navigationItem.leftBarButtonItem = closeButton;
+  // UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(_handleClose:)];
+  // self.navigationItem.leftBarButtonItem = closeButton;
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"< 返回" style:UIBarButtonItemStylePlain target:self action:@selector(_handleClose:)];
   WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero];
   webView.translatesAutoresizingMaskIntoConstraints = false;
   // TODO delegate (navigation back/forward)

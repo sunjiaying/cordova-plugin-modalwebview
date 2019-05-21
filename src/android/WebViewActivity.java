@@ -61,6 +61,37 @@ public class WebViewActivity extends AppCompatActivity {
     final LinearLayout container = new LinearLayout(this);
     container.setOrientation(LinearLayout.VERTICAL);
 
+    final LinearLayout nav = new LinearLayout(this);
+    nav.setOrientation(LinearLayout.HORIZONTAL);
+
+    final TextView back = new TextView(this);
+    back.setText("< 返回");
+    back.setTextColor(Color.parseColor("#4087f1"));
+    back.setPadding(25, 25, 25, 25);
+    back.setTextSize(14f);
+    back.setClickable(true);
+    back.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View arg0) {
+        finish();
+      }
+    });
+    back.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+    nav.addView(back);
+
+    String titletext = getIntent().getStringExtra(EXTRA_TITLE);
+    final TextView titlebar = new TextView(this);
+    titlebar.setText(titletext);
+    titlebar.setPadding(25, 25, 25, 25);
+    titlebar.setTextSize(14f);
+    titlebar.setGravity(Gravity.CENTER);
+    LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+    lllp.rightMargin = 120;
+    titlebar.setLayoutParams(lllp);
+    nav.addView(titlebar);
+
+    container.addView(nav);
+
     final ProgressBar progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
     progressBar.setIndeterminate(false);
     progressBar.setMax(100);
