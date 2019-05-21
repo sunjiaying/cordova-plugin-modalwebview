@@ -70,8 +70,8 @@ public class WebViewActivity extends AppCompatActivity {
     final TextView back = new TextView(this);
     back.setText("< 返回");
     back.setTextColor(Color.parseColor("#4087f1"));
-    back.setPadding(25, 25, 25, 25);
-    back.setTextSize(14f);
+    back.setPadding(30, 30, 30, 30);
+    back.setTextSize(15f);
     back.setClickable(true);
     back.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -85,8 +85,8 @@ public class WebViewActivity extends AppCompatActivity {
     String titletext = getIntent().getStringExtra(EXTRA_TITLE);
     final TextView titlebar = new TextView(this);
     titlebar.setText(titletext);
-    titlebar.setPadding(25, 25, 25, 25);
-    titlebar.setTextSize(14f);
+    titlebar.setPadding(30, 30, 30, 30);
+    titlebar.setTextSize(15f);
     titlebar.setGravity(Gravity.CENTER);
     LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     lllp.rightMargin = 120;
