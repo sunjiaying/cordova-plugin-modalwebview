@@ -124,6 +124,14 @@ public class WebViewActivity extends AppCompatActivity {
     container.addView(webView, wlp);
     webView.getSettings().setJavaScriptEnabled(true);
     webView.getSettings().setSupportMultipleWindows(true);
+
+    webView.getSettings().setDomStorageEnabled(true);   
+    webView.getSettings().setAppCacheMaxSize(1024*1024*8);  
+    String appCachePath = getApplicationContext().getCacheDir().getAbsolutePath();  
+    webView.getSettings().setAppCachePath(appCachePath);  
+    webView.getSettings().setAllowFileAccess(true);  
+    webView.getSettings().setAppCacheEnabled(true); 
+
     final int errorTextColor = getIntent().getIntExtra(EXTRA_ERROR_TEXT_COLOR, Color.TRANSPARENT);
     final int errorBackgroundColor = getIntent().getIntExtra(EXTRA_ERROR_BACKGROUND_COLOR, Color.TRANSPARENT);
     webView.setWebViewClient(new MWVWebViewClient(this, container, errorTextColor, errorBackgroundColor));
